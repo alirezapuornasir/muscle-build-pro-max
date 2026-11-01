@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101018">
+  <meta name="description" content="اپلیکیشن برنامه تمرینی MUSCLE BUILD PRO MAX">
+  <title>MUSCLE BUILD PRO MAX</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="صفحه اصلی">
+        <span class="brand-mark">MB</span>
+        <span><b>MUSCLE BUILD</b><small>PRO MAX · TRAIN SMART</small></span>
+      </a>
+      <button id="installBtn" class="install-btn" hidden>نصب اپلیکیشن</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">YOUR TRAINING SYSTEM</span>
+          <h1>قوی‌تر شو.<br><em>هوشمندانه تمرین کن.</em></h1>
+          <p>برنامه تمرینی، آموزش حرکات، تایمر استراحت و ثبت پیشرفت؛ همه در یک‌جا.</p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#today">شروع تمرین امروز <span>←</span></a>
+            <span class="status-pill"><i></i> نسخه آفلاین‌پذیر</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="hero-dumbbell">✦</div>
+          <div class="hero-number">06<small>DAYS / WEEK</small></div>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="آمار برنامه">
+        <article class="stat-card"><span>روزهای تمرین</span><b>۶</b><small>شنبه تا پنجشنبه</small></article>
+        <article class="stat-card"><span>جلسه روزانه</span><b>۱</b><small>قابل تقسیم به دو بخش</small></article>
+        <article class="stat-card"><span>تجهیزات</span><b>۴</b><small>دمبل، بارفیکس، پله، وزن بدن</small></article>
+        <article class="stat-card"><span>هدف</span><b>۱۰۰٪</b><small>فرم صحیح و پیشرفت تدریجی</small></article>
+      </section>
+
+      <section id="today" class="section-block">
+        <div class="section-heading">
+          <div><span class="eyebrow">DAILY WORKOUT</span><h2>برنامه امروز</h2></div>
+          <span id="todayLabel" class="date-chip"></span>
+        </div>
+        <div id="todayCard" class="today-card"></div>
+      </section>
+
+      <section id="weekly" class="section-block">
+        <div class="section-heading">
+          <div><span class="eyebrow">WEEKLY SPLIT</span><h2>برنامه هفتگی</h2></div>
+          <span class="muted">برای دیدن جزئیات انتخاب کن</span>
+        </div>
+        <div id="dayTabs" class="day-tabs"></div>
+        <div id="workoutPanel" class="workout-panel"></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div><span class="eyebrow">EXERCISE LIBRARY</span><h2>کتابخانه حرکات</h2></div>
+          <span class="muted">آموزش و نکات اجرا</span>
+        </div>
+        <div class="library-tools">
+          <input id="searchInput" type="search" placeholder="جست‌وجوی حرکت..." aria-label="جست‌وجوی حرکت">
+          <select id="groupFilter" aria-label="فیلتر عضله">
+            <option value="all">همه عضلات</option>
+            <option value="سینه">سینه</option><option value="پشت">پشت</option>
+            <option value="سرشانه">سرشانه</option><option value="بازو">بازو</option>
+            <option value="پا">پا</option><option value="شکم">شکم</option>
+          </select>
+        </div>
+        <div id="exerciseLibrary" class="exercise-grid"></div>
+      </section>
+
+      <section class="section-block progress-section">
+        <div class="section-heading"><div><span class="eyebrow">CONSISTENCY</span><h2>پیشرفت تو</h2></div></div>
+        <div class="progress-card">
+          <div><strong id="completedCount">۰</strong><span>حرکت تکمیل‌شده</span></div>
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <button id="resetProgress" class="ghost-btn">پاک‌کردن ثبت‌های امروز</button>
+        </div>
+      </section>
+
+      <section class="notice">
+        <b>یادآوری ایمنی</b>
+        <p>با توجه به سابقه گزارش درد قفسه سینه و تنگی نفس هنگام ورزش، قبل از شروع تمرین سنگین باید ارزیابی پزشکی و اجازه پزشک داشته باشی. در صورت درد قفسه سینه، تنگی نفس غیرعادی، سرگیجه یا ضعف ناگهانی، تمرین را متوقف کن و کمک پزشکی بگیر. حجم بیشتر همیشه به معنی نتیجه بهتر نیست.</p>
+      </section>
+    </main>
+
+    <footer><span>MUSCLE BUILD PRO MAX</span><span>ساخته‌شده برای تمرین منظم و اصولی</span></footer>
+  </div>
+
+  <dialog id="exerciseDialog" class="exercise-dialog">
+    <button class="dialog-close" id="closeDialog" aria-label="بستن">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <div id="timerWidget" class="timer-widget" aria-live="polite">
+    <span>تایمر استراحت</span><strong id="timerValue">۰۰:۰۰</strong>
+    <div><button data-seconds="45">۴۵ ثانیه</button><button data-seconds="60">۶۰ ثانیه</button><button data-seconds="90">۹۰ ثانیه</button><button id="stopTimer">توقف</button></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

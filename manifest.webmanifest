@@ -1,0 +1,19 @@
+{
+  "name": "MUSCLE BUILD PRO MAX",
+  "short_name": "MB PRO MAX",
+  "description": "برنامه تمرینی و کتابخانه حرکات",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0b11",
+  "theme_color": "#101018",
+  "lang": "fa",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
